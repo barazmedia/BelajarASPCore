@@ -1,32 +1,25 @@
+using BelajarASPCore.DAL;
 using BelajarASPCore.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BelajarASPCore.Controllers {
     public class HomeController : Controller {
+
+
+        //mengambil interface IMahasiswa
+        private IMahasiswa _mhs;
+        public HomeController(IMahasiswa mhs)
+        {
+            _mhs = mhs;
+        }
+
+
+
         public IActionResult Index()
         {
-            List<Mahasiswa> mhs = new List<Mahasiswa>();
-            mhs.Add(new Mahasiswa()
-                {
-                    Nim = "001",
-                    Nama = "Pandu Satria Mahardika",
-                    Alamat = "Bulili",
-                    Email = "pandu@gmail.com",
-                    Telp = "081226111842"
-                }
-            );
-
-            mhs.Add(new Mahasiswa()
-                {
-                    Nim = "002",
-                    Nama = "Arya Satria Mahardika",
-                    Alamat = "Karave",
-                    Email = "arya@gmail.com",
-                    Telp = "081226111841"
-                }
-            );
             
-            return View(mhs);
+            var data = _mhs.getAll();
+            return View(data);
         }
 
         public IActionResult About()

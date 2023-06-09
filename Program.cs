@@ -1,6 +1,10 @@
+using BelajarASPCore.DAL;
+
 var builder = WebApplication.CreateBuilder(args);
 //menambahkan MVC
 builder.Services.AddControllersWithViews();
+//menambahkan DAL
+builder.Services.AddScoped<IMahasiswa,MahasiswaDAL>();
 
 
 
