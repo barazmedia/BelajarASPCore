@@ -15,11 +15,17 @@ namespace BelajarASPCore.Controllers {
 
 
 
-        public IActionResult Index()
+        public IActionResult Index(string? nim)
         {
             
-            var data = _mhs.getAll();
-            return View(data);
+            if(!String.IsNullOrEmpty(nim)){
+                return View(_mhs.getByNim(nim));
+            }
+            else
+            {
+                return View(_mhs.getAll());
+            }
+            
         }
 
         public IActionResult About()

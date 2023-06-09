@@ -5,6 +5,7 @@ namespace BelajarASPCore.DAL {
 
         //membuat methode getAll
         public IEnumerable<Mahasiswa> getAll();
+        public IEnumerable<Mahasiswa> getByNim(string nim);
 
     }
 }

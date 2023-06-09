@@ -33,5 +33,14 @@ namespace BelajarASPCore.DAL
                 return Con.Query<Mahasiswa>(strSql);
             }
         }
+
+        public IEnumerable<Mahasiswa> getByNim(string nim)
+        {
+            using(SqlConnection Con = new SqlConnection(getConStr()))
+            {
+                var StrSql = "select * from mahasiswa where nim="+nim;
+                return Con.Query<Mahasiswa>(StrSql);
+            }
+        }
     }
 }

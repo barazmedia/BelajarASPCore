@@ -8,25 +8,25 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BelajarASPCore
 build_property.RootNamespace = BelajarASPCore
-build_property.ProjectDir = d:\BelajarASPCore\
+build_property.ProjectDir = D:\BelajarASPCore\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = d:\BelajarASPCore
+build_property.MSBuildProjectDirectory = D:\BelajarASPCore
 build_property._RazorSourceGeneratorDebug = 
 
-[d:/BelajarASPCore/Views/Home/About.cshtml]
+[D:/BelajarASPCore/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/BelajarASPCore/Views/Home/Index.cshtml]
+[D:/BelajarASPCore/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/BelajarASPCore/Views/Shared/_Layout.cshtml]
+[D:/BelajarASPCore/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/BelajarASPCore/Views/_ViewImports.cshtml]
+[D:/BelajarASPCore/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
