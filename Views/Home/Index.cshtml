@@ -1,0 +1,23 @@
+@{
+    Layout = "_Layout";
+}
+<h2>Data Mahasiswa</h2>
+<table class="table table-striped">
+    <tr>
+        <th>NIM</th>
+        <th>Nama</th>
+        <th>Alamat</th>
+        <th>Email</th>
+        <th>Telpon</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Nim</td>
+            <td>@item.Nama</td>
+            <td>@item.Alamat</td>
+            <td>@item.Email</td>
+            <td>@item.Telp</td>
+        </tr>
+    }
+</table>
