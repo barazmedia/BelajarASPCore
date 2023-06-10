@@ -92,5 +92,21 @@ namespace BelajarASPCore.DAL
                 }
             }
         }
+
+        public void Delete(string nim)
+        {
+            using(SqlConnection Con = new SqlConnection(getConStr()))
+            {
+                var strSql = @"delete from mahasiswa where nim=@nim";                
+                try {
+                    var param = new {nim=nim};
+                    Con.Execute(strSql, param);
+                }
+                catch(SqlException SqlEx)
+                {
+                    throw new Exception($"Error : {SqlEx.Message}");
+                }
+            }
+        }
     }
 }

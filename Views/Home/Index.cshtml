@@ -8,6 +8,12 @@
 </div>
 
 <div class="row">
+@if(ViewData["pesan"] != null){
+    @Html.Raw(ViewData["pesan"])
+}
+</div>
+
+<div class="row">
 <div class="col-md-12 bg-light text-right">
 <form class="navbar-search" action="/Home/Index" method="post">
     <div class="form-group">
@@ -35,7 +41,7 @@
             <td>@item.Email</td>
             <td>@item.Telpon</td>
             <td><a href="/Home/Details/@item.Nim" class="btn btn-primary">Update</a>|
-            <a href="/Home/Details/@item.Nim" class="btn btn-danger">Delete</a>
+            <a href="/Home/Delete/@item.Nim" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     }

@@ -67,6 +67,19 @@ namespace BelajarASPCore.Controllers {
             }
         }
 
+        public IActionResult Delete(string id)
+        {
+            try {
+                _mhs.Delete(id);
+                ViewData["pesan"]=$"<span class='alert alert-danger'>*** Data berhasil dihapus !</span>";
+                return View("Index",_mhs.getAll());
+            }
+            catch(Exception ex) {
+                ViewData["pesan"]=$"<span class='alert alert-danger'>*** Data gagal disimpan, Error : {ex.Message} </span>";
+                return View("Index",_mhs.getAll());
+            }
+        }
+
         public IActionResult About()
         {
             return View();

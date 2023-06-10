@@ -9,6 +9,7 @@ namespace BelajarASPCore.DAL {
         public void Insert(Mahasiswa mhs);
         public Mahasiswa getById(string nim);
         public void Update(Mahasiswa mhs);
+        public void Delete(string nim);
 
     }
 }
