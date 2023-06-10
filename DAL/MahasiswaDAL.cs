@@ -38,8 +38,9 @@ namespace BelajarASPCore.DAL
         {
             using(SqlConnection Con = new SqlConnection(getConStr()))
             {
-                var StrSql = "select * from mahasiswa where nim="+nim;
-                return Con.Query<Mahasiswa>(StrSql);
+                var StrSql = @"select * from mahasiswa where nim=@Nim";
+                var param = new {nim = nim};
+                return Con.Query<Mahasiswa>(StrSql,param);
             }
         }
 

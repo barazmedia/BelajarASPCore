@@ -14,15 +14,15 @@
 </div>
 
 <div class="row">
-<div class="col-md-12 bg-light text-right">
-<form class="navbar-search" action="/Home/Index" method="post">
+<form action="/Home/Search" class="form-inline" method="post">
     <div class="form-group">
-        <input type="text" name="nim" class="form-control" placeholder="Pencarian NIM .... " aria-label="Search" aria-describedby="basic-addon2">
+        <label for="keyword" class="label-control">Masukkan Keyword&nbsp;</label>
+        <input type="text" name="keyword" class="form-control" placeholder="Pencarian NIM .... " aria-label="Search" aria-describedby="basic-addon2">
+        <input type="submit" class="btn btn-primary" value="Search"/>
     </div>
 </form>
-</div>
-</div>
-
+</div></br>
+<div class="row">
 <table class="table table-striped">
     <tr>
         <th>NIM</th>
