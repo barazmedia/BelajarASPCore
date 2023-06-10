@@ -1,0 +1,46 @@
+@model BelajarASPCore.Models.Mahasiswa
+
+@{
+    Layout = "_Layout";
+}
+<h2>Form Edit Mahasiswa</h2>
+<div class="row">
+@if(ViewData["pesan"] != null){
+    @Html.Raw(ViewData["pesan"])
+}
+</div>
+<div class="col-md-6">
+    <form action="/Home/Update/" method="post">
+
+        <div class="form-group">
+            <label>Nama</label>
+            <input type="text" class="form-control" name="Nim" readonly="readonly" value="@Model.Nim"/>
+        </div>
+
+        <div class="form-group">
+            <label>Nama</label>
+            <input type="text" class="form-control" name="Nama" value="@Model.Nama"/>
+        </div>
+
+        <div class="form-group">
+            <label>Alamat</label>
+            <input type="text" class="form-control" name="Alamat" value="@Model.Alamat"/>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="Email" value="@Model.Email"/>
+        </div>
+
+        <div class="form-group">
+            <label>Telpon</label>
+            <input type="text" class="form-control" name="Telpon" value="@Model.Telpon"/>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Update"/>
+            <a href="/Home/Index" class="btn btn-primary">Kembali</a>
+        </div>
+
+    </form>
+</div>

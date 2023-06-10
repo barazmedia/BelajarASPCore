@@ -13,8 +13,6 @@ namespace BelajarASPCore.Controllers {
             _mhs = mhs;
         }
 
-
-
         public IActionResult Index(string? nim)
         {
             
@@ -25,7 +23,48 @@ namespace BelajarASPCore.Controllers {
             {
                 return View(_mhs.getAll());
             }
-            
+        }
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreatePost(Mahasiswa mhs)
+        {
+            try 
+            {
+                _mhs.Insert(mhs);
+                ViewData["pesan"]="<span class='alert alert-success'>*** Data berhasil ditambah </span>";
+                return View("Create");
+            }
+            catch(Exception ex)
+            {
+                ViewData["pesan"]=$"<span class='alert alert-danger'>*** Data gagal ditambah, Error : {ex.Message} </span>";
+                return View("Create");
+            }
+        }
+
+        public IActionResult Details(string id)
+        {
+            var data = _mhs.getById(id);
+            return View(data);
+        }
+
+        [HttpPost]
+        public IActionResult Update(Mahasiswa mhs)
+        {
+            try {
+
+                _mhs.Update(mhs);
+                ViewData["pesan"]="<span class='alert alert-success'>*** Data berhasil disimpan </span>";
+                return View("Details",mhs);
+                
+            }
+            catch(Exception ex){
+                ViewData["pesan"]=$"<span class='alert alert-danger'>*** Data gagal disimpan, Error : {ex.Message} </span>";
+                return View("Create",mhs);
+            }
         }
 
         public IActionResult About()

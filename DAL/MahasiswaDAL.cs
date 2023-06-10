@@ -42,5 +42,55 @@ namespace BelajarASPCore.DAL
                 return Con.Query<Mahasiswa>(StrSql);
             }
         }
+
+        public void Insert(Mahasiswa mhs)
+        {
+            using(SqlConnection Con = new SqlConnection(getConStr()))
+            {
+                var strSql = @"insert into Mahasiswa (nim,nama,alamat,email,telpon) 
+                            values (@Nim, @Nama, @Alamat, @Email, @Telpon)";
+                try {
+                    var param = new {Nim = mhs.Nim, Nama = mhs.Nama, Alamat = mhs.Alamat, Email = mhs.Email, Telpon = mhs.Telpon};
+                    Con.Execute(strSql, param);
+                }
+                catch(SqlException ex)
+                {
+                    throw new Exception($"Error : {ex.Message}");
+                }
+            }
+        }
+
+        public Mahasiswa getById(string nim)
+        {
+            using(SqlConnection Con = new SqlConnection(getConStr()))
+            {
+                var strSql = @"select * from mahasiswa where nim=@Nim";
+                var param = new {nim = nim};
+                var data = Con.QuerySingleOrDefault<Mahasiswa>(strSql,param);
+                if(data != null){
+                    return data;
+                }
+                else{
+                    throw new Exception("Data tidak ditemukan !");
+                }
+            }            
+        }
+
+        public void Update(Mahasiswa mhs)
+        {
+            using(SqlConnection Con = new SqlConnection(getConStr()))
+            {
+                var strSql =@"update mahasiswa set nama=@nama,alamat=@alamat,email=@email,telpon=@telpon
+                            where nim=@nim";
+
+                try {
+                    var param = new {nama=mhs.Nama, alamat=mhs.Alamat, email=mhs.Email, telpon=mhs.Telpon, nim=mhs.Nim};
+                    Con.Execute(strSql,param);
+                }
+                catch(SqlException ex){
+                    throw new Exception($"Error : {ex.Message}");
+                }
+            }
+        }
     }
 }

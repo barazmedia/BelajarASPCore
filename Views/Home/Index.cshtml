@@ -2,11 +2,21 @@
     Layout = "_Layout";
 }
 <h2>Data Mahasiswa</h2>
+
+<div class="form-group">
+    <a href="/Home/Create" class="btn btn-primary">Tambah</a>
+</div>
+
+<div class="row">
+<div class="col-md-12 bg-light text-right">
 <form class="navbar-search" action="/Home/Index" method="post">
     <div class="form-group">
         <input type="text" name="nim" class="form-control" placeholder="Pencarian NIM .... " aria-label="Search" aria-describedby="basic-addon2">
     </div>
 </form>
+</div>
+</div>
+
 <table class="table table-striped">
     <tr>
         <th>NIM</th>
@@ -14,6 +24,7 @@
         <th>Alamat</th>
         <th>Email</th>
         <th>Telpon</th>
+        <th>Action</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -23,6 +34,10 @@
             <td>@item.Telpon</td>
             <td>@item.Email</td>
             <td>@item.Telpon</td>
+            <td><a href="/Home/Details/@item.Nim" class="btn btn-primary">Update</a>|
+            <a href="/Home/Details/@item.Nim" class="btn btn-danger">Delete</a>
+            </td>
         </tr>
     }
 </table>
+
